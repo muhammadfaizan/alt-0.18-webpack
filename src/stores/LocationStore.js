@@ -1,4 +1,4 @@
-var alt = require('alt_app');
+var alt = require('../AltApp');
 var LocationActions = require('../actions/LocationActions');
 var LocationSource = require('../sources/LocationSource');
 var FavoritesStore = require('./FavoritesStore');

@@ -1,4 +1,4 @@
-var alt = require('alt_app');
+var alt = require('../AltApp');
 
 class LocationActions {
   updateLocations(locations) {
