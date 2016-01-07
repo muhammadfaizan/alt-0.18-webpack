@@ -34,7 +34,8 @@ module.exports = {
           exclude: /node_modules/, 
           loader: 'babel?cacheDirectory'
       }
-    ]
+    ],
+    
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('common', 'common.js'),
@@ -50,7 +51,7 @@ module.exports = {
   ],
 
   debug: true,
-  devtool: 'eval-cheap-module-source-map',
+  devtool: 'eval-source-map',//'eval-cheap-module-source-map',
   devServer: {
     contentBase: './tmp',
     historyApiFallback: true
