@@ -7,6 +7,7 @@ var LocationActions = require('../actions/LocationActions');
 var Favorites = React.createClass({
   render() {
     return (
+        <div>
       <ul>
         {this.props.locations.map((location, i) => {
           return (
@@ -14,6 +15,8 @@ var Favorites = React.createClass({
           );
         })}
       </ul>
+          {this.props.children}
+          </div>
     );
   }
 });
