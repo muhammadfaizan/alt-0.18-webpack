@@ -12,8 +12,11 @@
   "license": "MIT",
   "dependencies": {
     "alt": "^0.18.1",
+    "alt-container": "^1.0.0",
     "history": "^1.17.0",
+    "open-browser-webpack-plugin": "0.0.2",
     "react": "^0.14.5",
+    "react-dom": "^0.14.5",
     "react-router": "^1.0.3"
   },
   "devDependencies": {

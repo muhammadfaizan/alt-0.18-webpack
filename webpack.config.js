@@ -2,6 +2,7 @@
 
 var webpack = require('webpack'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
+  OpenBrowserPlugin = require('open-browser-webpack-plugin'),
   path = require('path'),
   srcPath = path.join(__dirname, 'src');
 
@@ -9,8 +10,8 @@ module.exports = {
   target: 'web',
   cache: true,
   entry: {
-          common: ['react', 'react-router', 'alt'],
-    module: path.join(srcPath, 'module.js')
+    common: ['react', 'react-router', 'alt'],
+    module: path.join(srcPath, 'App.js')
   },
   resolve: {
     root: srcPath,
@@ -40,6 +41,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: 'src/index.html'
+    }),
+    new OpenBrowserPlugin({
+      url: 'http://localhost:8080',
+      browser: 'Chrome'
     }),
     new webpack.NoErrorsPlugin()
   ],
