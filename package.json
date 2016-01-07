@@ -4,7 +4,7 @@
   "description": "none",
   "main": "module.js",
   "scripts": {
-    "dev": "webpack-dev-server --profile --colors -d",
+    "dev": "webpack-dev-server --profile --colors -d --watch",
     "build": "webpack --progress --profile --colors",
     "watch": "webpack-dev-server --hot --inline --progress --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
