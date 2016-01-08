@@ -27,11 +27,11 @@ render(
 import React from 'react'
 import { render } from 'react-dom'
 import { Router, Route, Link, IndexRoute } from 'react-router'
-
+import injectTapEventPlugin from 'react-tap-event-plugin';
 import Locations from './components/Locations';
 import Home from './components/Home';
+injectTapEventPlugin();
 
-console.log(Home);
 const App = React.createClass({
   render() {
     return (
