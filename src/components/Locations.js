@@ -3,15 +3,25 @@ var AltContainer = require('alt-container');
 var LocationStore = require('../stores/LocationStore');
 var FavoritesStore = require('../stores/FavoritesStore');
 var LocationActions = require('../actions/LocationActions');
+import List from 'material-ui/lib/lists/list';
+import Divider from 'material-ui/lib/divider';
+import ListItem from 'material-ui/lib/lists/list-item';
+import Paper from 'material-ui/lib/paper';
 
 var Favorites = React.createClass({
+
+  cssStyle:{
+    display: "inline",
+    padding: "10px",
+    margin: "10px"
+  },
   render() {
     return (
         <div>
       <ul>
         {this.props.locations.map((location, i) => {
           return (
-            <li key={i}>{location.name}</li>
+            <li key={i} style={this.cssStyle}><Paper depth={4}>{location.name}</Paper></li>
           );
         })}
       </ul>
@@ -28,7 +38,6 @@ var AllLocations = React.createClass({
     );
     LocationActions.favoriteLocation(location);
   },
-
   render() {
     if (this.props.errorMessage) {
       return (
@@ -54,7 +63,7 @@ var AllLocations = React.createClass({
           );
 
           return (
-            <li key={i}>
+            <li key={i} >
               {location.name} {location.has_favorite ? '<3' : faveButton}
             </li>
           );
