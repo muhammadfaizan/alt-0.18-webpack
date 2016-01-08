@@ -24,7 +24,8 @@ render(
   document.getElementById('ReactApp')
 );
 */
-require("./style/main.css");
+require("./styles/main.css");
+require("./styles/materialize.css");
 import React from 'react'
 import { render } from 'react-dom'
 import AppBar from 'material-ui/lib/app-bar';
