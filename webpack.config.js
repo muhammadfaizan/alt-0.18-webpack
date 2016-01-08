@@ -3,6 +3,9 @@
 var webpack = require('webpack'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   OpenBrowserPlugin = require('open-browser-webpack-plugin'),
+  ExtractTextPlugin = require('extract-text-webpack-plugin'),
+  UrlLoader = require('url-loader'),
+  FileLoader = require('url-loader'),
   path = require('path'),
   srcPath = path.join(__dirname, 'src');
 
@@ -36,11 +39,20 @@ module.exports = {
       {
         test: /\.css$/,
         loader: "style-loader!css-loader"
+      },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        loader: 'url-loader'
       }
     ],
     
   },
   plugins: [
+    /*new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
+    }),*/
     new webpack.optimize.CommonsChunkPlugin('common', 'common.js'),
     new HtmlWebpackPlugin({
       inject: true,
