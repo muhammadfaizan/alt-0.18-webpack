@@ -26,6 +26,7 @@ render(
 */
 import React from 'react'
 import { render } from 'react-dom'
+import AppBar from 'material-ui/lib/app-bar';
 import { Router, Route, Link, IndexRoute } from 'react-router'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Locations from './components/Locations';
@@ -36,6 +37,10 @@ const App = React.createClass({
   render() {
     return (
         <div>
+          <AppBar
+              title="Alt App with Webpack and Material UI"
+              iconClassNameRight="muidocs-icon-navigation-expand-more"
+              />
           {this.props.children}
         </div>
     )

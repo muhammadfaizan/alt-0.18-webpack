@@ -11,7 +11,7 @@ class Home extends React.Component {
 
         <Link to="/location">
           <RaisedButton primary={true} label="Location"/>
-          
+
         </Link>
 
     );
