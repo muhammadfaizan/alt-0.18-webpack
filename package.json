@@ -43,6 +43,7 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0",
+    "jquery": "^2.1.4",
     "xml": "^1.0.0"
   }
 }

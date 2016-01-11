@@ -45,6 +45,30 @@ var LocationSource = {
       error: LocationActions.locationsFailed,
       loading: LocationActions.fetchLocations
     }
+  },
+
+  fetchJourneys() {
+    return {
+      remote() {
+        return new Promise(function (resolve, reject) {
+
+          $.get( "http://localhost:3000/api", function( data ) {
+
+            resolve( data );
+          });
+
+        });
+      },
+
+      local() {
+        // Never check locally, always fetch remotely.
+        return null;
+      },
+
+      success: LocationActions.updateLocations,
+      error: LocationActions.locationsFailed,
+      loading: LocationActions.fetchLocations
+    }
   }
 };
 

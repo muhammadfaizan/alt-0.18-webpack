@@ -32,6 +32,7 @@ import AppBar from 'material-ui/lib/app-bar';
 import { Router, Route, Link, IndexRoute } from 'react-router'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Locations from './components/Locations';
+import JourneysListing from './pages/JourneysListing';
 import Home from './components/Home';
 injectTapEventPlugin();
 
@@ -55,6 +56,7 @@ render((
         <IndexRoute component={Home}/>
         <Route path="home" component={Home} />
         <Route path="location" component={Locations}/>
+        <Route path="journeys" component={JourneysListing}/>
       </Route>
     </Router>
 ), document.getElementById('ReactApp'))
