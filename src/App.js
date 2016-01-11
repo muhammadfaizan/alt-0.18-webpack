@@ -30,6 +30,8 @@ import { Router, Route, Link, IndexRoute } from 'react-router'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Locations from './components/Locations';
 import Home from './components/Home';
+import Suggest  from './components/AutoComplete';
+import Mapping  from './components/Map';
 injectTapEventPlugin();
 
 const App = React.createClass({
@@ -48,6 +50,8 @@ render((
         <IndexRoute component={Home}/>
         <Route path="home" component={Home} />
         <Route path="location" component={Locations}/>
+        <Route path="autocomplete" component={Suggest}/>
+        <Route path="map" component={Mapping}/>
       </Route>
     </Router>
 ), document.getElementById('ReactApp'))
