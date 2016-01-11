@@ -24,20 +24,30 @@ render(
   document.getElementById('ReactApp')
 );
 */
+require("./styles/main.css");
+require("./styles/materialize.css");
 import React from 'react'
 import { render } from 'react-dom'
+import AppBar from 'material-ui/lib/app-bar';
 import { Router, Route, Link, IndexRoute } from 'react-router'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Locations from './components/Locations';
+import JourneysListing from './pages/JourneysListing';
 import Home from './components/Home';
 import Suggest  from './components/AutoComplete';
 import Mapping  from './components/Map';
+import Map from './components/Map/Map;
 injectTapEventPlugin();
 
+/*<AppBar
+title="Alt App with Webpack and Material UI"
+iconClassNameRight="muidocs-icon-navigation-expand-more"
+    />*/
 const App = React.createClass({
   render() {
     return (
-        <div>
+        <div >
+
           {this.props.children}
         </div>
     )
@@ -47,11 +57,16 @@ const App = React.createClass({
 render((
     <Router>
       <Route path="/" component={App}>
-        <IndexRoute component={Home}/>
+        <IndexRoute component={Map}/>
         <Route path="home" component={Home} />
         <Route path="location" component={Locations}/>
+<<<<<<< .mine
         <Route path="autocomplete" component={Suggest}/>
         <Route path="map" component={Mapping}/>
+=======
+        <Route path="map" componenet={Map}/>
+        <Route path="journeys" component={JourneysListing}/>
+>>>>>>> .theirs
       </Route>
     </Router>
 ), document.getElementById('ReactApp'))
