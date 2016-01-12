@@ -37,15 +37,15 @@ import Home from './components/Home';
 import Map from './components/Map/Map';
 injectTapEventPlugin();
 
-/*<AppBar
-title="Alt App with Webpack and Material UI"
-iconClassNameRight="muidocs-icon-navigation-expand-more"
-    />*/
+/**/
 const App = React.createClass({
   render() {
     return (
         <div >
-
+          <AppBar
+              title="Alt App with Webpack and Material UI"
+              iconClassNameRight="muidocs-icon-navigation-expand-more"
+              />
           {this.props.children}
         </div>
     )
@@ -55,10 +55,10 @@ const App = React.createClass({
 render((
     <Router>
       <Route path="/" component={App}>
-        <IndexRoute component={Map}/>
+        <IndexRoute component={Home}/>
         <Route path="home" component={Home} />
         <Route path="location" component={Locations}/>
-        <Route path="map" componenet={Map}/>
+        <Route path="map" component={Map}/>
         <Route path="journeys" component={JourneysListing}/>
       </Route>
     </Router>

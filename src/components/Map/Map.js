@@ -32,7 +32,7 @@ export default class SimpleMapPage extends React.Component {
         return (
             <div className="map">
             <GoogleMap
-                apiKey='AIzaSyClrg6TsqAGm4zfUTBcZGXMxdG2Sg3LnfM' // set if you need stats etc ...
+                bootstrapURLKeys={{key: 'AIzaSyClrg6TsqAGm4zfUTBcZGXMxdG2Sg3LnfM'}}// set if you need stats etc ...
                 center={this.props.center}
                 zoom={this.props.zoom}>
                 <MyGreatPlace lat={59.955413} lng={30.337844} text={'A'} /* Kreyser Avrora */ />
