@@ -17,9 +17,6 @@ var Locations = React.createClass({
 
   render() {
     return (
-    <div className="box">
-
-      <div className="column1">
 
         <div>
           <h1>Locations</h1>
@@ -32,11 +29,6 @@ var Locations = React.createClass({
             <Favorites />
           </AltContainer>
         </div>
-      </div>
-      <div classsName="column2" >
-        <Map/>
-      </div>
-    </div>
     );
   }
 });

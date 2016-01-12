@@ -14,6 +14,9 @@ class Home extends React.Component {
           <Link to="/map">
             <RaisedButton primary={true} label="Map"/>
           </Link>
+          <Link to="/journeys">
+            <RaisedButton primary={true} label="Journeys"/>
+          </Link>
         </div>
 
     );

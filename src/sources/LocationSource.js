@@ -1,4 +1,6 @@
 var LocationActions = require('../actions/LocationActions');
+var $ = require('jquery');
+var parseXml = require('xml2js').parseString;
 
 var mockData = [
   { id: 0, name: 'Abu Dhabi' },
@@ -48,27 +50,29 @@ var LocationSource = {
   },
 
   fetchJourneys() {
-    return {
-      remote() {
-        return new Promise(function (resolve, reject) {
 
-          $.get( "http://localhost:3000/api", function( data ) {
+    //return new Promise(function (resolve, reject) {
+    //
+    //    $.get( "http://localhost:3000/api", function( data ) {
+    //
+    //    parseXml(data, function (err, result) {
+    //      console.table(result);
+    //    });
+    //
+    //    resolve( data );
+    //  });
+    //
+    //});
+
+    return new Promise(function (resolve, reject) {
+
+      $.get( "http://localhost:3000/api", function( data ) {
 
             resolve( data );
-          });
+      });
 
-        });
-      },
+    });
 
-      local() {
-        // Never check locally, always fetch remotely.
-        return null;
-      },
-
-      success: LocationActions.updateLocations,
-      error: LocationActions.locationsFailed,
-      loading: LocationActions.fetchLocations
-    }
   }
 };
 
