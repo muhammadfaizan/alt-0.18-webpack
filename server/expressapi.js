@@ -5,7 +5,7 @@
 var express = require('express');
 var app = express();
 
-app.get('/api', function (req, res) {
+app.get('/api/getJourneys', function (req, res) {
 
     res.set('Access-Control-Allow-Origin', '*');
 
@@ -15,6 +15,13 @@ app.get('/api', function (req, res) {
     var jsonJourneys = [{"id":0,"name":"karachi"},{"id":1,"name":"queta"},{"id":2,"name":"peshawar"},{"id":3,"name":"lahore"},{"id":4,"name":"islamabad"}];
 
     res.send(journeys);
+});
+
+app.post('/api/samplePost', function (req, res) {
+
+  res.set('Access-Control-Allow-Origin', '*');
+  res.send('POST request received');
+
 });
 
 app.listen(3000, function () {

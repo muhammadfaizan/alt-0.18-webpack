@@ -54,7 +54,7 @@ var LocationSource = {
 
     return new Promise(function (resolve, reject) {
 
-      $.get( "http://localhost:3000/api", function( data ) {
+      $.get( "http://localhost:3000/api/getJourneys", function( data ) {
             var parsedJson = xmlToJson(data);
             var dataArray = parsedJson.journeys.journey;
             resolve( dataArray);
