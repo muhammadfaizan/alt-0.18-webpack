@@ -36,7 +36,8 @@ import JourneysListing from './pages/JourneysListing';
 import Home from './components/Home';
 import Suggest  from './components/AutoComplete';
 import Mapping  from './components/Map';
-import Map from './components/Map/Map;
+import Map from './components/Map/Map';
+import Directions  from './components/RouteMap';
 injectTapEventPlugin();
 
 /*<AppBar
@@ -60,13 +61,13 @@ render((
         <IndexRoute component={Map}/>
         <Route path="home" component={Home} />
         <Route path="location" component={Locations}/>
-<<<<<<< .mine
+
         <Route path="autocomplete" component={Suggest}/>
         <Route path="map" component={Mapping}/>
-=======
+        <Route path="routemap" component={Directions}/>
         <Route path="map" componenet={Map}/>
         <Route path="journeys" component={JourneysListing}/>
->>>>>>> .theirs
+
       </Route>
     </Router>
 ), document.getElementById('ReactApp'))

@@ -24,7 +24,7 @@ import {triggerEvent} from "react-google-maps/lib/utils";
                 lat: -34.397, lng: 150.644,
             },
             key: "London",
-            defaultAnimation: 2
+            defaultAnimation: 5
         }]
     };
 
@@ -99,15 +99,15 @@ import {triggerEvent} from "react-google-maps/lib/utils";
           <div
             {...this.props}
             style={{
-              height: "100%"
+              height: "500px"
             }}
           />
         }
                 googleMapElement={
           <GoogleMap
             ref={(map) => (this._googleMapComponent = map) && console.log(map.getZoom())}
-            defaultZoom={3}
-            defaultCenter={{lat: -34.397, lng: 150.644}}
+            defaultZoom={7}
+            defaultCenter={{lat: 51.5072, lng: 0.1275}}
             onClick={this.handleMapClick}>
             {this.state.markers.map((marker, index) => {
               return (
