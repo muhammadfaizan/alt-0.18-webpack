@@ -29,21 +29,31 @@ require("./styles/materialize.css");
 import React from 'react'
 import { render } from 'react-dom'
 import AppBar from 'material-ui/lib/app-bar';
-import { Router, Route, Link, IndexRoute } from 'react-router'
+import { Router, Route, Link, IndexRoute, History} from 'react-router'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Locations from './components/Locations';
 import JourneysListing from './pages/JourneysListing';
 import Home from './components/Home';
 import Map from './components/Map/Map';
+import IconButton from 'material-ui/lib/icon-button';
+import NavigationBack from 'material-ui/lib/svg-icons/navigation/arrow-back';
+import FlatButton from 'material-ui/lib/flat-button';
 injectTapEventPlugin();
 
 /**/
 const App = React.createClass({
+    handleTouchTap :function(evt)  {
+
+        this.history.goBack()
+    },
+    mixins: [ History ],
   render() {
     return (
         <div >
           <AppBar
               title="Alt App with Webpack and Material UI"
+              onTouchTap={this.handleTouchTap}
+              iconElementLeft={<IconButton><NavigationBack /></IconButton>}
               iconClassNameRight="muidocs-icon-navigation-expand-more"
               />
           {this.props.children}
