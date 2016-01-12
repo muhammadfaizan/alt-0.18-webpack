@@ -51,17 +51,26 @@ var LocationSource = {
 
   fetchJourneys() {
 
+    //return new Promise(function (resolve, reject) {
+    //
+    //    $.get( "http://localhost:3000/api", function( data ) {
+    //
+    //    parseXml(data, function (err, result) {
+    //      console.table(result);
+    //    });
+    //
+    //    resolve( data );
+    //  });
+    //
+    //});
+
     return new Promise(function (resolve, reject) {
-
-          $.get( "http://localhost:3000/api", function( data ) {
-
-        parseXml(data, function (err, result) {
-          console.table(result);
-        });
-
-        resolve( data );
-      });
-
+      // simulate an asynchronous action where data is fetched on
+      // a remote server somewhere.
+      setTimeout(function () {
+        // resolve with some mock data
+        resolve(mockData);
+      }, 850);
     });
 
   }

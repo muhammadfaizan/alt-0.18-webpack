@@ -4,14 +4,14 @@
 
 var React = require('react');
 var AltContainer = require('alt-container');
-var LocationActions = require('../actions/LocationActions');
+var JourneyActions = require('../actions/JourneyActions');
 var Journeys = require('../components/Journeys');
 var JourneyStore = require('../stores/JourneyStore');
 
 var JourneysListing = React.createClass({
 
   componentDidMount() {
-    //LocationActions.fetchLocation(this.props.params.locationId);
+    JourneyActions.fetchJourneys();
   },
 
   render() {
