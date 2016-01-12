@@ -26,7 +26,8 @@
     "react-tap-event-plugin": "^0.2.1",
     "can-use-dom": "^0.1.0",
     "google-maps-infobox": "^1.1.13",
-    "lodash.isequal": "^3.0.4"
+    "lodash.isequal": "^3.0.4",
+    "react-google-maps":"^4.7.2"
   },
   "devDependencies": {
     "babel-core": "^6.3.26",
@@ -52,5 +53,7 @@
     "webpack-dev-server": "^1.14.0",
     "xml": "^1.0.0",
     "xml2js": "^0.4.15"
+
+
   }
 }
