@@ -4,6 +4,9 @@
 
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/api/getJourneys', function (req, res) {
 
@@ -20,7 +23,9 @@ app.get('/api/getJourneys', function (req, res) {
 app.post('/api/samplePost', function (req, res) {
 
   res.set('Access-Control-Allow-Origin', '*');
-  res.send('POST request received');
+  //console.log(req.body);
+
+  res.send('POST request received of ' + req.body.name);
 
 });
 

@@ -14,6 +14,7 @@
   "dependencies": {
     "alt": "^0.18.1",
     "alt-container": "^1.0.0",
+    "body-parser": "^1.14.2",
     "can-use-dom": "^0.1.0",
     "google-map-react": "^0.9.3",
     "google-maps-infobox": "^1.1.13",
