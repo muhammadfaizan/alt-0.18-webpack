@@ -65,12 +65,12 @@ var LocationSource = {
     //});
 
     return new Promise(function (resolve, reject) {
-      // simulate an asynchronous action where data is fetched on
-      // a remote server somewhere.
-      setTimeout(function () {
-        // resolve with some mock data
-        resolve(mockData);
-      }, 850);
+
+      $.get( "http://localhost:3000/api", function( data ) {
+
+            resolve( data );
+      });
+
     });
 
   }

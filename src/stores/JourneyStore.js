@@ -15,6 +15,7 @@ class JourneyStore {
 
   onAfterFetchJourneys(list) {
     this.journeys = list;
+
   }
 }
 

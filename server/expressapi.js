@@ -7,12 +7,14 @@ var app = express();
 
 app.get('/api', function (req, res) {
 
-    res.type("text/xml");
     res.set('Access-Control-Allow-Origin', '*');
 
-    var journeys = "<journeys><journey><id>1</id><to>Tove</to><from>Jani</from> </journey><journey><id>2</id><to>Malta</to><from>Karachi</from> </journey></journeys>";
+    res.type("json");
 
-    res.send(journeys);
+    var journeys = "<journeys><journey><id>1</id><to>Tove</to><from>Jani</from> </journey><journey><id>2</id><to>Malta</to><from>Karachi</from> </journey></journeys>";
+    var jsonJourneys = [{"id":0,"name":"karachi"},{"id":1,"name":"queta"},{"id":2,"name":"peshawar"},{"id":3,"name":"lahore"},{"id":4,"name":"islamabad"}];
+
+    res.send(jsonJourneys);
 });
 
 app.listen(3000, function () {
