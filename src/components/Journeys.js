@@ -11,7 +11,7 @@ var Journeys = React.createClass({
           {this.props.journeys.map((journey, i) => {
             return (
 
-                <li key={i} className="collection-item">{journey.name}</li>
+                <li key={i} className="collection-item"> From {journey.from['#text']} to {journey.to['#text']}</li>
 
             );
           })}

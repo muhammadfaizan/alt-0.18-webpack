@@ -1,6 +1,7 @@
 var LocationActions = require('../actions/LocationActions');
 var $ = require('jquery');
 var parseXml = require('xml2js').parseString;
+import xmlToJson from './../utils/xmlToJson';
 
 var mockData = [
   { id: 0, name: 'Abu Dhabi' },
@@ -51,24 +52,12 @@ var LocationSource = {
 
   fetchJourneys() {
 
-    //return new Promise(function (resolve, reject) {
-    //
-    //    $.get( "http://localhost:3000/api", function( data ) {
-    //
-    //    parseXml(data, function (err, result) {
-    //      console.table(result);
-    //    });
-    //
-    //    resolve( data );
-    //  });
-    //
-    //});
-
     return new Promise(function (resolve, reject) {
 
       $.get( "http://localhost:3000/api", function( data ) {
-
-            resolve( data );
+            var parsedJson = xmlToJson(data);
+            var dataArray = parsedJson.journeys.journey;
+            resolve( dataArray);
       });
 
     });
