@@ -34,7 +34,10 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import Locations from './components/Locations';
 import JourneysListing from './pages/JourneysListing';
 import Home from './components/Home';
+import Suggest  from './components/AutoComplete';
+import Mapping  from './components/Map';
 import Map from './components/Map/Map';
+import Directions  from './components/RouteMap';
 injectTapEventPlugin();
 
 /**/
@@ -58,8 +61,17 @@ render((
         <IndexRoute component={Home}/>
         <Route path="home" component={Home} />
         <Route path="location" component={Locations}/>
-        <Route path="map" component={Map}/>
+
+
+        <Route path="autocomplete" component={Suggest}/>
+        <Route path="map" component={Mapping}/>
+        <Route path="routemap" component={Directions}/>
+        <Route path="map" componenet={Map}/>
+
+
+
         <Route path="journeys" component={JourneysListing}/>
+
       </Route>
     </Router>
 ), document.getElementById('ReactApp'))

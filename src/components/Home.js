@@ -18,6 +18,7 @@ class Home extends React.Component {
             <RaisedButton primary={true} label="Journeys"/>
           </Link>
         </div>
+
     );
   }
 }
