@@ -5,9 +5,9 @@ import React from 'react';
 import shouldPureComponentUpdate from 'react-pure-render/function';
 import GoogleMap from 'google-map-react';
 import MyGreatPlace from './MapPlace.js';
-console.log(GoogleMap);
-console.log(MyGreatPlace);
-console.log(shouldPureComponentUpdate);
+//console.log(GoogleMap);
+//console.log(MyGreatPlace);
+//console.log(shouldPureComponentUpdate);
 
 export default class SimpleMapPage extends React.Component {
     static propTypes = {
