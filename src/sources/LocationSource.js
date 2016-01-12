@@ -1,5 +1,4 @@
 var LocationActions = require('../actions/LocationActions');
-var $ = require('jquery');
 var parseXml = require('xml2js').parseString;
 
 var mockData = [

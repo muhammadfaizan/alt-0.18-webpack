@@ -55,7 +55,7 @@ const App = React.createClass({
 render((
     <Router>
       <Route path="/" component={App}>
-        <IndexRoute component={Map}/>
+        <IndexRoute component={Home}/>
         <Route path="home" component={Home} />
         <Route path="location" component={Locations}/>
         <Route path="map" componenet={Map}/>
