@@ -1,4 +1,5 @@
 var LocationActions = require('../actions/LocationActions');
+var $ = require('jquery');
 var parseXml = require('xml2js').parseString;
 
 var mockData = [
@@ -52,7 +53,7 @@ var LocationSource = {
 
     return new Promise(function (resolve, reject) {
 
-      $.get( "http://localhost:3000/api", function( data ) {
+          $.get( "http://localhost:3000/api", function( data ) {
 
         parseXml(data, function (err, result) {
           console.table(result);
