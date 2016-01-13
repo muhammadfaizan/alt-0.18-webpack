@@ -16,6 +16,10 @@ class LocationActions {
   favoriteLocation(location) {
     return location;
   }
+
+  removeFavoriteLocation(location) {
+    return location;
+  }
 }
 
 module.exports = alt.createActions(LocationActions);

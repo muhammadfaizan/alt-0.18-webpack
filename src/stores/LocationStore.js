@@ -12,7 +12,8 @@ class LocationStore {
       handleUpdateLocations: LocationActions.UPDATE_LOCATIONS,
       handleFetchLocations: LocationActions.FETCH_LOCATIONS,
       handleLocationsFailed: LocationActions.LOCATIONS_FAILED,
-      setFavorites: LocationActions.FAVORITE_LOCATION
+      setFavorites: LocationActions.FAVORITE_LOCATION,
+      removeFavorites: LocationActions.removeFavoriteLocation
     });
 
     this.exportPublicMethods({
@@ -63,6 +64,10 @@ class LocationStore {
         }
       }
     });
+  }
+
+  removeFavorites(location){
+    this.setFavorites(location);
   }
 
   getLocation(id) {

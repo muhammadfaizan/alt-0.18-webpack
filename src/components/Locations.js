@@ -19,12 +19,12 @@ var Locations = React.createClass({
     return (
 
         <div>
-          <h1>Locations</h1>
+          <h3>Locations</h3>
           <AltContainer store={LocationStore}>
             <AllLocations />
           </AltContainer>
 
-          <h1>Favorites</h1>
+          <h3>Favorites</h3>
           <AltContainer store={FavoritesStore}>
             <Favorites />
           </AltContainer>
