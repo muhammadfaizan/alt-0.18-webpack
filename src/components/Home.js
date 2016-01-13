@@ -15,7 +15,10 @@ class Home extends React.Component {
             <RaisedButton primary={true} label="Map"/>
           </Link>
           <Link to="/journeys">
-            <RaisedButton primary={true} label="Journeys"/>
+            <RaisedButton primary={true} label="XML2Json"/>
+          </Link>
+          <Link to="/autocomplete">
+            <RaisedButton primary={true} label="Autocomplete"/>
           </Link>
         </div>
 

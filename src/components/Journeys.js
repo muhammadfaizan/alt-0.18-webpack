@@ -5,7 +5,7 @@
 var React = require('react');
 var $ = require('jquery');
 
-var fs = require('fs'), xml2js = require('xml2js');
+var xml2js = require('xml2js');
 
 var Journeys = React.createClass({
   postXml(){
