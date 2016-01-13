@@ -23,9 +23,9 @@ app.get('/api/getJourneys', function (req, res) {
 app.post('/api/samplePost', function (req, res) {
 
   res.set('Access-Control-Allow-Origin', '*');
-  //console.log(req.body);
+  console.log(req.body);
 
-  res.send('POST request received of ' + req.body.name);
+  res.send('Payload recieved ');
 
 });
 

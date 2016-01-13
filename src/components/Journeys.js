@@ -5,10 +5,16 @@
 var React = require('react');
 var $ = require('jquery');
 
+var fs = require('fs'), xml2js = require('xml2js');
+
 var Journeys = React.createClass({
   postXml(){
 
-    $.post( "http://localhost:3000/api/samplePost", { name: "John", time: "2pm" })
+    var data = { name: "John", time: "2pm" };
+    var builder = new xml2js.Builder();
+    var xml = builder.buildObject(data);
+
+    $.post( "http://localhost:3000/api/samplePost", xml)
         .done(function( data ) {
           alert( "Data Loaded: " + data );
       });
