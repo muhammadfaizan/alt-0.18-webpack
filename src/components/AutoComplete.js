@@ -16,7 +16,10 @@ class Suggest extends React.Component {
                 floatingLabelText="Search Text"
                 dataSource={['ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh', 'abcdefghi','tahir','faizan']}
                 onUpdateInput={(t) => { console.log(t); this.setState({input1: [t, t + t, t + t + t]}); }}
-                onNewRequest={(t) => { console.log('request:' + t); }} />
+                onNewRequest={(t) => { console.log('request:' + t); }}
+                triggerUpdateOnFocus={true}
+                filter={AutoComplete.caseInsensitiveFilter}
+            />
 
 
         );
