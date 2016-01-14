@@ -6,7 +6,7 @@ class LocationActions {
   }
 
   fetchLocations() {
-    return ;
+    return null;
   }
 
   locationsFailed(errorMessage) {
