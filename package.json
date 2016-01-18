@@ -72,7 +72,9 @@
     "unmockedModulePathPatterns": [
       "node_modules/react",
       "node_modules/alt",
-      "src/AltApp.js"
+      "src/AltApp",
+      "src/stores",
+      "src/actions"
     ]
   }
 }

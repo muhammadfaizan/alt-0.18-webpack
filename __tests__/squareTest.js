@@ -2,11 +2,8 @@
  * Created by V_D on 1/18/2016.
  */
 
-// __tests__/sum-test.js
-jest.dontMock('../src/AltApp');
-jest.dontMock('../src/stores/TestStore');
-jest.dontMock('../src/stores/FavoritesStore');
-jest.dontMock('../src/actions/LocationActions');
+//jest.dontMock('../src/AltApp');
+//unmocking of stores and actions configured in package.json
 
 import alt from '../src/AltApp';
 
@@ -20,15 +17,13 @@ describe('TestStore', function() {
     // get initial state of store
     var oldLength = FavoritesStore.getState().locations.length;
 
-    console.log(oldLength);
-
     // create action to be dispatched
     var data = {id: 10, name: 'bhawalpur'},
         action = LocationActions.FAVORITE_LOCATION;
 
     alt.dispatcher.dispatch({action, data});
 
-    console.log(FavoritesStore.getState().locations.length);
+    //console.log(FavoritesStore.getState().locations);
 
     // assertions
     expect(FavoritesStore.getState().locations.length).toBe(oldLength + 1);
