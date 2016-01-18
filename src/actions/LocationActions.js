@@ -1,21 +1,6 @@
 var alt = require('../AltApp');
 
-class LocationActions {
-  updateLocations(locations) {
-    return locations;
-  }
 
-  fetchLocations() {
-    return ;
-  }
+const LocationActions = alt.generateActions('updateLocations', 'fetchLocations', 'locationsFailed', 'favoriteLocation', 'removeFavoriteLocation');
 
-  locationsFailed(errorMessage) {
-    return errorMessage;
-  }
-
-  favoriteLocation(location) {
-    return location;
-  }
-}
-
-module.exports = alt.createActions(LocationActions);
+module.exports = LocationActions;

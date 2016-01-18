@@ -39,12 +39,12 @@ const AllLocations = React.createClass({
                         <button  onClick={this.addFave} data-id={location.id}>
                             +
                         </button>
-
                     );
+                    var heart = (<img src={require('../images/heart.png')} />);
 
                     return (
                         <ListItem key={i} >
-                            {location.name} {location.has_favorite ? '<3' : faveButton}
+                            {location.name} {location.has_favorite ? heart : faveButton}
                         </ListItem>
                     );
                 })}

@@ -6,7 +6,7 @@
 git clone https://github.com/goatslacker/alt-tutorial.git
 cd alt-tutorial
 npm install
-npm start
+npm run dev
 ```
 
 ## License
