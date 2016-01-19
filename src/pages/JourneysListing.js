@@ -4,17 +4,26 @@
 
 var React = require('react');
 var AltContainer = require('alt-container');
-var LocationActions = require('../actions/LocationActions');
+var JourneyActions = require('../actions/JourneyActions');
+var Journeys = require('../components/Journeys');
+var JourneyStore = require('../stores/JourneyStore');
 
 var JourneysListing = React.createClass({
 
   componentDidMount() {
-    //LocationActions.fetchLocation(this.props.params.locationId);
+    JourneyActions.fetchJourneys();
   },
 
   render() {
     return (
-        <h3>Journeys Listing from XML to JSON</h3>
+        <div>
+          <h3>Journeys Listing from XML to JSON</h3>
+
+          <AltContainer store={JourneyStore}>
+            <Journeys />
+          </AltContainer>
+
+        </div>
     );
   }
 });

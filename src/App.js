@@ -34,10 +34,13 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import Locations from './components/Locations';
 import JourneysListing from './pages/JourneysListing';
 import Home from './components/Home';
+import Suggest  from './components/AutoComplete';
+import Mapping  from './components/Map';
 import Map from './components/Map/Map';
 import IconButton from 'material-ui/lib/icon-button';
 import NavigationBack from 'material-ui/lib/svg-icons/navigation/arrow-back';
 import FlatButton from 'material-ui/lib/flat-button';
+import Directions  from './components/RouteMap';
 injectTapEventPlugin();
 
 /**/
@@ -68,8 +71,17 @@ render((
         <IndexRoute component={Home}/>
         <Route path="home" component={Home} />
         <Route path="location" component={Locations}/>
+
+
+        <Route path="autocomplete" component={Suggest}/>
+        <Route path="mapping" component={Mapping}/>
+        <Route path="routemap" component={Directions}/>
         <Route path="map" component={Map}/>
+
+
+
         <Route path="journeys" component={JourneysListing}/>
+
       </Route>
     </Router>
 ), document.getElementById('ReactApp'))

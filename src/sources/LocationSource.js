@@ -1,21 +1,13 @@
 var LocationActions = require('../actions/LocationActions');
 var $ = require('jquery');
 var parseXml = require('xml2js').parseString;
+import xmlToJson from './../utils/xmlToJson';
 
 var mockData = [
   { id: 0, name: 'Abu Dhabi' },
   { id: 1, name: 'Berlin' },
   { id: 2, name: 'Bogota' },
-  { id: 3, name: 'Buenos Aires' },
-  { id: 4, name: 'Cairo' },
-  { id: 5, name: 'Chicago' },
-  { id: 6, name: 'Lima' },
-  { id: 7, name: 'London' },
-  { id: 8, name: 'Miami' },
-  { id: 9, name: 'Moscow' },
-  { id: 10, name: 'Mumbai' },
-  { id: 11, name: 'Paris' },
-  { id: 12, name: 'San Francisco' }
+  { id: 3, name: 'Malta' }
 ];
 
 var LocationSource = {
@@ -53,13 +45,10 @@ var LocationSource = {
 
     return new Promise(function (resolve, reject) {
 
-          $.get( "http://localhost:3000/api", function( data ) {
-
-        parseXml(data, function (err, result) {
-          console.table(result);
-        });
-
-        resolve( data );
+      $.get( "http://localhost:3000/api/getJourneys", function( data ) {
+            var parsedJson = xmlToJson(data);
+            var dataArray = parsedJson.journeys.journey;
+            resolve( dataArray);
       });
 
     });
