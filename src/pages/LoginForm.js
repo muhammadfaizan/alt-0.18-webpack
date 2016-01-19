@@ -11,7 +11,7 @@ var UserStore = require('../stores/UserStore');
 var LoginForm = React.createClass({
 
   loginClick(data){
-    alert(data.password);
+    UserActions.login(data);
   },
   render() {
     return (

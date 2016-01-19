@@ -3,8 +3,29 @@
  */
 
 var alt = require('../AltApp');
+var AuthenicationSource = require('../sources/AuthenicationSource');
 
-const UserActions = alt.generateActions('login');
+class UserActions {
 
-module.exports = UserActions;
+  login(data) {
+
+    return (dispatch) => {
+
+      dispatch();
+      AuthenicationSource.login(data)
+          .then((data) => {
+
+            if (data.isSuccess)
+              this.afterLogin(data.token);
+          });
+    }
+  }
+
+  afterLogin(token) {
+    return token;
+  }
+
+}
+
+module.exports = alt.createActions(UserActions);
 

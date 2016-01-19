@@ -5,6 +5,7 @@
 var alt = require('../AltApp');
 var UserActions = require('../actions/UserActions');
 var {findAndRemove} = require('../utils/Helpers');
+var cookie = require('react-cookie');
 
 class UserStore {
   constructor() {
@@ -13,8 +14,12 @@ class UserStore {
     this.bindActions(UserActions);
   }
 
-  onLogin(token) {
+  onAfterLogin(token) {
     this.authenticationToken = token;
+
+    cookie.save('userToken', token);
+
+    window.location.href = 'home';
   }
 
 }
