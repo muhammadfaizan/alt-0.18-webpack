@@ -48,11 +48,11 @@ module.exports = {
     
   },
   plugins: [
-    /*new webpack.ProvidePlugin({
+    new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
       "window.jQuery": "jquery"
-    }),*/
+    }),
     new webpack.optimize.CommonsChunkPlugin('common', 'common.js'),
     new HtmlWebpackPlugin({
       inject: true,

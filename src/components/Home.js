@@ -11,9 +11,6 @@ class Home extends React.Component {
           <Link to="/location">
             <RaisedButton primary={true} label="Location"/>
           </Link>
-          <Link to="/autocomplete">
-            <RaisedButton primary={true} label="AutoComplete"/>
-          </Link>
           <Link to="/map">
             <RaisedButton primary={true} label="Map"/>
           </Link>
@@ -23,8 +20,8 @@ class Home extends React.Component {
           <Link to="/autocomplete">
             <RaisedButton primary={true} label="Autocomplete"/>
           </Link>
-          <Link to="/routemap">
-            <RaisedButton primary={true} label="Directed Map"/>
+          <Link to="/login">
+            <RaisedButton primary={true} label="Login"/>
           </Link>
         </div>
 

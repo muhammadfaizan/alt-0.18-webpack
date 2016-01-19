@@ -29,6 +29,18 @@ app.post('/api/samplePost', function (req, res) {
 
 });
 
+
+app.post('/api/login', function (req, res) {
+
+  res.set('Access-Control-Allow-Origin', '*');
+  console.log(req.body);
+
+  var returnPayload = {isSuccess:true, token: 'ks7JHF^#&NJnjfka#863kb', message:''};
+
+  res.send(returnPayload);
+
+});
+
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!');
 })

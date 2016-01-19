@@ -5,9 +5,7 @@ import React from 'react';
 import shouldPureComponentUpdate from 'react-pure-render/function';
 import GoogleMap from 'google-map-react';
 import MyGreatPlace from './MapPlace.js';
-//console.log(GoogleMap);
-//console.log(MyGreatPlace);
-//console.log(shouldPureComponentUpdate);
+import FavoriteStore from '../../stores/FavoritesStore'
 
 export default class SimpleMapPage extends React.Component {
     static propTypes = {
@@ -15,11 +13,11 @@ export default class SimpleMapPage extends React.Component {
         zoom: React.PropTypes.number,
         greatPlaceCoords: React.PropTypes.any
     };
-
     static defaultProps = {
-        center: [59.938043, 30.337157],
-        zoom: 9,
-        greatPlaceCoords: {lat: 59.724465, lng: 30.080121}
+        center: [40.714, -74.006],
+        zoom:2,
+        greatPlaceCoords: {lat: 44.724465, lng: -30.080121},
+        greatPlace :FavoriteStore.getState().locations
     };
 
     shouldComponentUpdate = shouldPureComponentUpdate;
@@ -27,16 +25,99 @@ export default class SimpleMapPage extends React.Component {
     constructor(props) {
         super(props);
     }
-
+  /*<MyGreatPlace lat={59.955413} lng={30.337844} text={'A'} /!* Kreyser Avrora *!/ />
+   <MyGreatPlace {...this.props.greatPlaceCoords} text={'B'} /!* road circle *!/ />*/
     render() {
-        return (
-            <div className="map">
-            <GoogleMap
-                bootstrapURLKeys={{key: 'AIzaSyClrg6TsqAGm4zfUTBcZGXMxdG2Sg3LnfM'}}// set if you need stats etc ...
+      var marker1, marker2;
+      var poly, geodesicPoly;
+
+      function update() {
+        var path = [marker1.getPosition(), marker2.getPosition()];
+        //poly.setPath(path);
+        geodesicPoly.setPath(path);
+        //var heading = google.maps.geometry.spherical.computeHeading(path[0], path[1]);
+      }
+
+
+
+      return (
+        <div className="map">
+          <GoogleMap
+            onGoogleApiLoaded={({map, maps}) => {
+
+
+                /*map.controls[google.maps.ControlPosition.TOP_CENTER].push(
+                    document.getElementById('info'));*/
+
+                marker1 = new google.maps.Marker({
+                  map: map,
+                  draggable: false,
+                  position: {lat: 40.714, lng: -74.006}
+                });
+
+                marker2 = new google.maps.Marker({
+                  map: map,
+                  draggable: false,
+                  position: {lat: 48.857, lng: 2.352}
+                });
+
+                /*var bounds = new google.maps.LatLngBounds(
+                    marker1.getPosition(), marker2.getPosition());
+                map.fitBounds(bounds);*/
+                /*google.maps.event.addListener(marker1, 'position_changed', update);
+                google.maps.event.addListener(marker2, 'position_changed', update);*/
+
+
+                console.log(poly);
+                geodesicPoly = new maps.Polyline({
+                  strokeColor: '#CC0099',
+                  strokeOpacity: 1.0,
+                  strokeWeight: 3,
+                  geodesic: true,
+                  map: map
+                });
+                console.log(geodesicPoly);
+
+                update();
+
+
+
+
+              /*var marker2 = new google.maps.Marker({
+                map: map,
+                draggable: false,
+                position: {lat: 48.857, lng: 2.352}
+              });*/
+/*
+              var self = this;
+              var marks = [];
+              let geocoder = new maps.Geocoder();
+              var places =[];
+
+              geocoder.geocode( { 'address': this.props.greatPlace[0]}, function(results, status) {
+                  if (status == google.maps.GeocoderStatus.OK) {
+                    new google.maps.Marker({
+                      map: map,
+                      position: {
+                        lat: results[0].geometry.location.lat(),
+                        lng: results[0].geometry.location.lng()
+                       },
+                       key: results[0].place_id
+                     })
+                   }
+                    else {
+                      alert("Geocode was not successful for the following reason: " + status);
+                    }
+                  });
+*/
+            }}
+
+                bootstrapURLKeys={
+                    {key: 'AIzaSyClrg6TsqAGm4zfUTBcZGXMxdG2Sg3LnfM'}
+                }// set if you need stats etc ...
                 center={this.props.center}
                 zoom={this.props.zoom}>
-                <MyGreatPlace lat={59.955413} lng={30.337844} text={'A'} /* Kreyser Avrora */ />
-                <MyGreatPlace {...this.props.greatPlaceCoords} text={'B'} /* road circle */ />
+
             </GoogleMap>
                 </div>
         );

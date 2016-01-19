@@ -7,6 +7,7 @@
     "dev": "webpack-dev-server --profile --colors -d --watch",
     "watch": "webpack-dev-server --hot --inline --progress --colors",
     "build": "webpack --progress --profile --colors",
+    "start": "npm run watch",
     "test": "jest"
   },
   "author": "Muhammad Faizan",
@@ -26,10 +27,13 @@
     "open-browser-webpack-plugin": "0.0.2",
     "react": "^0.14.5",
     "react-addons-update": "^0.14.6",
+    "react-cookie": "^0.4.3",
     "react-dom": "^0.14.5",
     "react-google-maps": "^4.7.2",
+    "react-pure-render": "^1.0.2",
     "react-router": "^1.0.3",
     "react-tap-event-plugin": "^0.2.1",
+    "xml": "^1.0.0",
     "xml2js": "^0.4.15"
   },
   "devDependencies": {
@@ -48,14 +52,10 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "html-webpack-plugin": "^1.7.0",
-    "jquery": "^2.1.4",
-    "react-pure-render": "^1.0.2",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0",
-    "xml": "^1.0.0",
-    "babel-jest": "^6.0.1",
     "jest-cli": "^0.8.1"
   },
   "jest": {
