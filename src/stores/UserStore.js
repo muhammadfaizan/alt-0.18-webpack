@@ -10,6 +10,7 @@ var cookie = require('react-cookie');
 class UserStore {
   constructor() {
     this.authenticationToken = '';
+    this.loginMessage = '';
 
     this.bindActions(UserActions);
   }
@@ -18,10 +19,14 @@ class UserStore {
     this.authenticationToken = token;
 
     cookie.save('userToken', token);
-
-    window.location.href = 'home';
+    
+    window.location.hash = 'home';
   }
 
+  onAfterLoginFailure(msg){
+    this.loginMessage = msg;
+    //console.log(msg);
+  }
 }
 
 module.exports = alt.createStore(UserStore, 'UserStore');

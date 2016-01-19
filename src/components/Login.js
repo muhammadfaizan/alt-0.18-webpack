@@ -13,8 +13,14 @@ var Login = React.createClass({
   },
 
   render() {
+
     return (
           <form  className="col s12" onSubmit={this.handleSubmit}>
+
+            <p style={{color:"red"}}>
+                 {this.props.loginMessage}
+            </p>
+
             <input id="username" name="username"
                 type="text"
                 placeholder="Username"
@@ -24,6 +30,7 @@ var Login = React.createClass({
                 type="password"
                 placeholder="Password"
                 />
+
             <RaisedButton label="Login" primary={true} type="submit"/>
 
           </form>

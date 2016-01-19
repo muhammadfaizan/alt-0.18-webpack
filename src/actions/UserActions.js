@@ -17,12 +17,19 @@ class UserActions {
 
             if (data.isSuccess)
               this.afterLogin(data.token);
+            else
+              this.afterLoginFailure(data.message);
+
           });
     }
   }
 
   afterLogin(token) {
     return token;
+  }
+
+  afterLoginFailure(message) {
+    return message;
   }
 
 }
