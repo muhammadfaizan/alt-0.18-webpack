@@ -46,7 +46,6 @@ injectTapEventPlugin();
 /**/
 const App = React.createClass({
     handleTouchTap :function(evt)  {
-
         this.history.goBack()
     },
     mixins: [ History ],
@@ -64,24 +63,18 @@ const App = React.createClass({
     )
   }
 })
-
+ // <!--<Route path="mapping" component={Mapping}/>-->
 render((
     <Router>
       <Route path="/" component={App}>
         <IndexRoute component={Home}/>
         <Route path="home" component={Home} />
         <Route path="location" component={Locations}/>
-
-
         <Route path="autocomplete" component={Suggest}/>
-        <Route path="mapping" component={Mapping}/>
+
         <Route path="routemap" component={Directions}/>
         <Route path="map" component={Map}/>
-
-
-
         <Route path="journeys" component={JourneysListing}/>
-
       </Route>
     </Router>
 ), document.getElementById('ReactApp'))
