@@ -11,8 +11,10 @@ class UserStore {
   constructor() {
     this.authenticationToken = '';
     this.loginMessage = '';
+    this.messageColor  = 'red';
 
     this.bindActions(UserActions);
+
   }
 
   onAfterLogin(token) {
@@ -25,8 +27,14 @@ class UserStore {
 
   onAfterLoginFailure(msg){
     this.loginMessage = msg;
-    //console.log(msg);
+    this.messageColor = 'red';
   }
+
+  onLogging(data){
+    this.loginMessage = data.message;
+    this.messageColor = data.color;
+  }
+
 }
 
 module.exports = alt.createStore(UserStore, 'UserStore');
