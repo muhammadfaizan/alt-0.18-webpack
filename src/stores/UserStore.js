@@ -10,16 +10,29 @@ var cookie = require('react-cookie');
 class UserStore {
   constructor() {
     this.authenticationToken = '';
+    this.loginMessage = '';
+    this.messageColor  = 'red';
 
     this.bindActions(UserActions);
+
   }
 
   onAfterLogin(token) {
     this.authenticationToken = token;
 
     cookie.save('userToken', token);
+    
+    window.location.hash = 'home';
+  }
 
-    window.location.href = 'home';
+  onAfterLoginFailure(msg){
+    this.loginMessage = msg;
+    this.messageColor = 'red';
+  }
+
+  onLogging(data){
+    this.loginMessage = data.message;
+    this.messageColor = data.color;
   }
 
 }

@@ -18,7 +18,7 @@ var LoginForm = React.createClass({
         <div className="container">
           <h3>User Login</h3>
 
-          <AltContainer >
+          <AltContainer store={UserStore}>
             <Login onLogin = {this.loginClick}/>
           </AltContainer>
 

@@ -33,9 +33,15 @@ app.post('/api/samplePost', function (req, res) {
 app.post('/api/login', function (req, res) {
 
   res.set('Access-Control-Allow-Origin', '*');
-  console.log(req.body);
 
-  var returnPayload = {isSuccess:true, token: 'ks7JHF^#&NJnjfka#863kb', message:''};
+  var returnPayload = {isSuccess:true, token: 'ks7JHF^#&NJnjfka#863kb', message:'Login succesfull!'};
+
+  console.log(req.body.password);
+
+  if (req.body.password != 'click'){
+    returnPayload.isSuccess = false;
+    returnPayload.message = 'Password is invalid';
+  }
 
   res.send(returnPayload);
 

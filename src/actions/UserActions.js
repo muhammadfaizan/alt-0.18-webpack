@@ -12,17 +12,34 @@ class UserActions {
     return (dispatch) => {
 
       dispatch();
+
+      var actionDispatcher = this;
+      actionDispatcher.logging({message:"Please wait...",color:"blue"}); //dispatch the please wait msg
+
       AuthenicationSource.login(data)
           .then((data) => {
 
-            if (data.isSuccess)
-              this.afterLogin(data.token);
+            setTimeout(function(){
+              if (data.isSuccess)
+                actionDispatcher.afterLogin(data.token);
+              else
+                actionDispatcher.afterLoginFailure(data.message);
+            },1500); //delaying just to check the loader on screen
+
           });
     }
   }
 
   afterLogin(token) {
     return token;
+  }
+
+  afterLoginFailure(message) {
+    return message;
+  }
+
+  logging(msg){
+    return msg;
   }
 
 }
