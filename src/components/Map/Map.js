@@ -4,51 +4,59 @@
 import React from 'react';
 import shouldPureComponentUpdate from 'react-pure-render/function';
 import GoogleMap from 'google-map-react';
-import MyGreatPlace from './MapPlace.js';
-import FavoriteStore from '../../stores/FavoritesStore'
+import MyGreatPlace from './MapPlace';
+import MarkerStore from '../../stores/MarkerStore'
+import MarkerAction from '../../actions/MarkerAction'
 
 export default class SimpleMapPage extends React.Component {
-    static propTypes = {
-        center: React.PropTypes.array,
-        zoom: React.PropTypes.number,
-        greatPlaceCoords: React.PropTypes.any
-    };
-    static defaultProps = {
-        center: [40.714, -74.006],
-        zoom:2,
-        greatPlaceCoords: {lat: 44.724465, lng: -30.080121},
-        greatPlace :FavoriteStore.getState().locations
-    };
+	static propTypes = {
+		center: React.PropTypes.array,
+		zoom: React.PropTypes.number,
+		greatPlaceCoords: React.PropTypes.any
+	};
+	/*static defaultProps = {
+		center: [40.714, -74.006],
+		zoom: 2,
+		greatPlaceCoords: [],
+	};*/
 
-    shouldComponentUpdate = shouldPureComponentUpdate;
+	componentDidMount() {
 
-    constructor(props) {
-        super(props);
-    }
-  /*<MyGreatPlace lat={59.955413} lng={30.337844} text={'A'} /!* Kreyser Avrora *!/ />
-   <MyGreatPlace {...this.props.greatPlaceCoords} text={'B'} /!* road circle *!/ />*/
-    render() {
-      var marker1, marker2;
-      var poly, geodesicPoly;
+    /*MarkerAction.fetchMarkers()
+    this.props.greatPlaceCoords = MarkerStore.getState();
+*/
+	}
 
-      function update() {
-        var path = [marker1.getPosition(), marker2.getPosition()];
-        //poly.setPath(path);
-        geodesicPoly.setPath(path);
-        //var heading = google.maps.geometry.spherical.computeHeading(path[0], path[1]);
-      }
+	shouldComponentUpdate = shouldPureComponentUpdate;
+
+	constructor(props) {
+		super(props);
+	}
+
+	/*<MyGreatPlace lat={59.955413} lng={30.337844} text={'A'} /!* Kreyser Avrora *!/ />
+	 <MyGreatPlace {...this.props.greatPlaceCoords} text={'B'} /!* road circle *!/ />*/
+	render() {
+		var marker1, marker2;
+		var poly, geodesicPoly;
+
+		function update() {
+			var path = [marker1.getPosition(), marker2.getPosition()];
+			//poly.setPath(path);
+			geodesicPoly.setPath(path);
+			//var heading = google.maps.geometry.spherical.computeHeading(path[0], path[1]);
+		}
 
 
-
-      return (
-        <div className="map">
-          <GoogleMap
-            onGoogleApiLoaded={({map, maps}) => {
+		return (
+			<div className="map">
+				<GoogleMap
+          YesIWantToUseGoogleMapApiInternals={true}
+					onGoogleApiLoaded={({map, maps}) => {
 
 
                 /*map.controls[google.maps.ControlPosition.TOP_CENTER].push(
                     document.getElementById('info'));*/
-
+/*
                 marker1 = new google.maps.Marker({
                   map: map,
                   draggable: false,
@@ -61,11 +69,11 @@ export default class SimpleMapPage extends React.Component {
                   position: {lat: 48.857, lng: 2.352}
                 });
 
-                /*var bounds = new google.maps.LatLngBounds(
+                /!*var bounds = new google.maps.LatLngBounds(
                     marker1.getPosition(), marker2.getPosition());
-                map.fitBounds(bounds);*/
-                /*google.maps.event.addListener(marker1, 'position_changed', update);
-                google.maps.event.addListener(marker2, 'position_changed', update);*/
+                map.fitBounds(bounds);*!/
+                /!*google.maps.event.addListener(marker1, 'position_changed', update);
+                google.maps.event.addListener(marker2, 'position_changed', update);*!/
 
 
                 console.log(poly);
@@ -78,7 +86,7 @@ export default class SimpleMapPage extends React.Component {
                 });
                 console.log(geodesicPoly);
 
-                update();
+                update();*/
 
 
 
@@ -112,14 +120,23 @@ export default class SimpleMapPage extends React.Component {
 */
             }}
 
-                bootstrapURLKeys={
+					bootstrapURLKeys={
                     {key: 'AIzaSyClrg6TsqAGm4zfUTBcZGXMxdG2Sg3LnfM'}
                 }// set if you need stats etc ...
-                center={this.props.center}
-                zoom={this.props.zoom}>
+					center={this.props.center}
+					zoom={this.props.zoom}>
+          {
+            this.props.markers.map((marker, index) => {
+              return (
+                <MyGreatPlace lat={marker.lat} lng={marker.lng} text={'A'} />
+                )
 
-            </GoogleMap>
-                </div>
-        );
-    }
+            })
+
+          }
+
+				</GoogleMap>
+			</div>
+		);
+	}
 }
