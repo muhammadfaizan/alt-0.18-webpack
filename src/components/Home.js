@@ -9,7 +9,7 @@ class Home extends React.Component {
     return (
         <div>
           <Link to="/location">
-            <RaisedButton primary={true} label="Locations"/>
+            <RaisedButton primary={true} label="Tokenizer"/>
           </Link>
           <Link to="/map">
             <RaisedButton primary={true} label="Map"/>

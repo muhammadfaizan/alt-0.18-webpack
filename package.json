@@ -20,6 +20,7 @@
     "google-map-react": "^0.9.3",
     "google-maps-infobox": "^1.1.13",
     "history": "^1.17.0",
+    "jquery": "^2.2.0",
     "lodash": "^3.10.1",
     "lodash.isequal": "^3.0.4",
     "material-design-icons": "^2.1.3",
