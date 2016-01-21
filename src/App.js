@@ -26,6 +26,7 @@ render(
 */
 require("./styles/main.css");
 require("./styles/materialize.css");
+//require('babel-polyfill');
 import React from 'react'
 import { render } from 'react-dom'
 import AppBar from 'material-ui/lib/app-bar';
