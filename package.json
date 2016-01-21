@@ -36,7 +36,8 @@
     "react-router": "^1.0.3",
     "react-tap-event-plugin": "^0.2.1",
     "xml": "^1.0.0",
-    "xml2js": "^0.4.15"
+    "xml2js": "^0.4.15",
+    "react-lazy-cache":"^3.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.3.26",
