@@ -36,13 +36,13 @@ import JourneysListing from './pages/JourneysListing';
 import Home from './components/Home';
 import Suggest  from './components/AutoComplete';
 import Mapping  from './components/Map';
+import Storage  from './components/StorageComponent';
 import LoginForm  from './pages/LoginForm';
-import Map from './components/Map/Map';
+import Map from './components/MapContainer';
 import IconButton from 'material-ui/lib/icon-button';
 import NavigationBack from 'material-ui/lib/svg-icons/navigation/arrow-back';
 import FlatButton from 'material-ui/lib/flat-button';
 import Directions  from './components/RouteMap';
-import Arithmetic from './components/cacheComp';
 injectTapEventPlugin();
 
 /**/
@@ -72,13 +72,11 @@ render((
         <IndexRoute component={Home}/>
         <Route path="home" component={Home} />
         <Route path="location" component={Locations}/>
-     
-
         <Route path="routemap" component={Directions}/>
         <Route path="map" component={Map}/>
         <Route path="login" component={LoginForm}/>
-        <Route path="arithmetic" component={Arithmetic}/>
-
+        <Route path="autocomplete" component={Suggest}/>
+        <Route path="storage" component={Storage}/>
 
         <Route path="journeys" component={JourneysListing}/>
       </Route>

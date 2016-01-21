@@ -9,7 +9,7 @@ class Home extends React.Component {
     return (
         <div>
           <Link to="/location">
-            <RaisedButton primary={true} label="Location"/>
+            <RaisedButton primary={true} label="Tokenizer"/>
           </Link>
           <Link to="/map">
             <RaisedButton primary={true} label="Map"/>
@@ -18,7 +18,10 @@ class Home extends React.Component {
             <RaisedButton primary={true} label="XML2Json"/>
           </Link>
           <Link to="/autocomplete">
-            <RaisedButton primary={true} label="Autocomplete"/>
+            <RaisedButton primary={true} label="Autocomplete & Datepicker"/>
+          </Link>
+          <Link to="/storage">
+            <RaisedButton primary={true} label="Local Storage"/>
           </Link>
           <Link to="/arithmetic">
             <RaisedButton primary={true} label="Cache"/>
