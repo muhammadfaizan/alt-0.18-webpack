@@ -20,6 +20,9 @@ class Home extends React.Component {
           <Link to="/autocomplete">
             <RaisedButton primary={true} label="Autocomplete"/>
           </Link>
+          <Link to="/arithmetic">
+            <RaisedButton primary={true} label="Cache"/>
+          </Link>
           <Link to="/login">
             <RaisedButton primary={true} label="Login"/>
           </Link>
