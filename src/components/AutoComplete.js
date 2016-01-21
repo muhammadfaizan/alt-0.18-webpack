@@ -7,10 +7,19 @@
 import React from 'react';
 import {Link} from 'react-router';
 import AutoComplete from 'material-ui/lib/auto-complete.js';
+import DatePicker from 'material-ui/lib/date-picker/date-picker';
 
 class Suggest extends React.Component {
     render() {
         return (
+            <div>
+
+              <DatePicker
+                  id = "myDatepicker"
+                  hintText="Inline (AutoOk)"
+                  container="inline"
+                  autoOk={true}
+                  onChange={this.handleChange}/>
 
             <AutoComplete
                 floatingLabelText="Search Text"
@@ -20,6 +29,10 @@ class Suggest extends React.Component {
                 triggerUpdateOnFocus={true}
                 filter={AutoComplete.caseInsensitiveFilter}
             />
+
+
+
+            </div>
 
 
         );

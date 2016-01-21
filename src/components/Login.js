@@ -17,7 +17,7 @@ var Login = React.createClass({
     return (
           <form  className="col s12" onSubmit={this.handleSubmit}>
 
-            <p style={{color:"red"}}>
+            <p style={{color:this.props.messageColor}}>
                  {this.props.loginMessage}
             </p>
 
