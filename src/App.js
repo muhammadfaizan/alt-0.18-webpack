@@ -35,6 +35,7 @@ import Locations from './components/Locations';
 import JourneysListing from './pages/JourneysListing';
 import Home from './components/Home';
 import Suggest  from './components/AutoComplete';
+import Datepicker  from './components/Datepicker';
 import Mapping  from './components/Map';
 import LoginForm  from './pages/LoginForm';
 import Map from './components/Map/Map';
@@ -76,6 +77,8 @@ render((
         <Route path="routemap" component={Directions}/>
         <Route path="map" component={Map}/>
         <Route path="login" component={LoginForm}/>
+        <Route path="autocomplete" component={Suggest}/>
+        <Route path="datepicker" component={Datepicker}/>
 
 
 
