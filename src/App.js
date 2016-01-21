@@ -36,6 +36,7 @@ import JourneysListing from './pages/JourneysListing';
 import Home from './components/Home';
 import Suggest  from './components/AutoComplete';
 import Mapping  from './components/Map';
+import Storage  from './components/StorageComponent';
 import LoginForm  from './pages/LoginForm';
 import Map from './components/Map/Map';
 import IconButton from 'material-ui/lib/icon-button';
@@ -77,6 +78,7 @@ render((
         <Route path="map" component={Map}/>
         <Route path="login" component={LoginForm}/>
         <Route path="autocomplete" component={Suggest}/>
+        <Route path="storage" component={Storage}/>
 
         <Route path="journeys" component={JourneysListing}/>
       </Route>

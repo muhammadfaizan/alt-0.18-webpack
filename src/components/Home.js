@@ -20,6 +20,9 @@ class Home extends React.Component {
           <Link to="/autocomplete">
             <RaisedButton primary={true} label="Autocomplete & Datepicker"/>
           </Link>
+          <Link to="/storage">
+            <RaisedButton primary={true} label="Local Storage"/>
+          </Link>
           <Link to="/login">
             <RaisedButton primary={true} label="Login"/>
           </Link>
