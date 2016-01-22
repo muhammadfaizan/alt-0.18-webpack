@@ -44,6 +44,7 @@ import IconButton from 'material-ui/lib/icon-button';
 import NavigationBack from 'material-ui/lib/svg-icons/navigation/arrow-back';
 import FlatButton from 'material-ui/lib/flat-button';
 import Directions  from './components/RouteMap';
+import Arithmetic  from './components/cacheComp';
 injectTapEventPlugin();
 
 /**/
@@ -78,6 +79,7 @@ render((
         <Route path="login" component={LoginForm}/>
         <Route path="autocomplete" component={Suggest}/>
         <Route path="storage" component={Storage}/>
+        <Route path="arithmetic" component={Arithmetic}/>
 
         <Route path="journeys" component={JourneysListing}/>
       </Route>

@@ -3,7 +3,7 @@
  */
 import {default as React, Component} from "react";
 
-import {GoogleMapLoader,GoogleMap, DirectionsRenderer} from "react-google-maps";
+import {GoogleMapLoader,GoogleMap, DirectionsRenderer,DrawingManager} from "react-google-maps";
 
 /*
  * Add <script src="https://maps.googleapis.com/maps/api/js"></script> to your HTML to provide google.maps reference
@@ -53,6 +53,29 @@ export default class Directions extends Component {
                        defaultZoom={7}
                        defaultCenter={origin}>
                 {directions ? <DirectionsRenderer directions={directions} /> : null}
+                <DrawingManager
+          defaultDrawingMode={google.maps.drawing.OverlayType.CIRCLE}
+          defaultOptions={{
+            drawingControl: true,
+            drawingControlOptions: {
+              position: google.maps.ControlPosition.TOP_CENTER,
+              drawingModes: [
+                google.maps.drawing.OverlayType.CIRCLE,
+                google.maps.drawing.OverlayType.POLYGON,
+                google.maps.drawing.OverlayType.POLYLINE,
+                google.maps.drawing.OverlayType.RECTANGLE,
+              ],
+            },
+            circleOptions: {
+              fillColor: '#ffff00',
+              fillOpacity: 1,
+              strokeWeight: 5,
+              clickable: false,
+              editable: true,
+              zIndex: 1,
+            },
+          }}
+        />
             </GoogleMap>
             }
                 />

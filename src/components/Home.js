@@ -23,6 +23,9 @@ class Home extends React.Component {
           <Link to="/storage">
             <RaisedButton primary={true} label="Local Storage"/>
           </Link>
+          <Link to="/arithmetic">
+            <RaisedButton primary={true} label="Cache"/>
+          </Link>
           <Link to="/login">
             <RaisedButton primary={true} label="Login"/>
           </Link>
