@@ -2,7 +2,7 @@
   "name": "webpack-win",
   "version": "1.0.0",
   "description": "none",
-  "main": "module.js",
+  "main": "App.js",
   "scripts": {
     "dev": "webpack-dev-server --profile --colors -d --watch",
     "watch": "webpack-dev-server --hot --inline --progress --colors",
