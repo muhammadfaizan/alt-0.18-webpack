@@ -91,11 +91,11 @@ export default class SimpleMapPage extends React.Component {
 
 
 
-              var marker2 = new google.maps.Marker({
+              /*var marker2 = new google.maps.Marker({
                 map: map,
                 draggable: false,
                 position: {lat: 48.857, lng: 2.352}
-              });
+              });*/
 /*
               var self = this;
               var marks = [];
@@ -127,9 +127,9 @@ export default class SimpleMapPage extends React.Component {
 					zoom={this.props.zoom}>
           {
             this.props.markers.map((marker, index) => {
-              /*return (
+              return (
                 <MyGreatPlace key={index} lat={marker.lat} lng={marker.lng} text={'A'} />
-                )*/
+                )
 
             })
 
