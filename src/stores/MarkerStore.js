@@ -8,12 +8,12 @@ import MarkerSource from '../sources/MarkerSource'
 
 
 class MarkerStore {
-    constructor() {
+        constructor() {
         //locations = MarkerSource.fetchMarkers();
         this.markers = [];
         this.center =[40.714, -74.006];
         this.zoom= 2;
-          //greatPlaceCoords: [],
+        //greatPlaceCoords: [],
         //this.registerAsync(MarkerSource);
         this.bindActions(MarkerAction);
         this.exportAsync(MarkerSource);
