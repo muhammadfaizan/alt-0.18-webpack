@@ -29,6 +29,9 @@ class Home extends React.Component {
           <Link to="/login">
             <RaisedButton primary={true} label="Login"/>
           </Link>
+          <Link to="/auth">
+          <RaisedButton primary={true} label="Auth"/>
+        </Link>
         </div>
 
     );
