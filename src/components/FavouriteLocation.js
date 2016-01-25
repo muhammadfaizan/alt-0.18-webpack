@@ -4,14 +4,15 @@
 import React from 'react';
 import LocationStore from '../stores/LocationStore';
 import LocationActions from '../actions/LocationActions';
+import ComponentBase from './ComponentBase';
 
-class FavouriteLocation extends React.Component {
+class FavouriteLocation extends ComponentBase {
   removeFave(ev){
-    var location = LocationStore.getLocation(
-        Number(ev.target.getAttribute('data-id'))
-    );
-    LocationActions.removeFavoriteLocation(location);
-  }
+  var location = LocationStore.getLocation(
+      Number(ev.target.getAttribute('data-id'))
+  );
+  LocationActions.removeFavoriteLocation(location);
+}
   render() {
     return (<div>
             <ul>
