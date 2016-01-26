@@ -20,9 +20,7 @@ var cacheComp = React.createClass({
 
         <div>
           <h3>Computations Using Local Cache</h3>
-
             <Arithmetic a={1} b={3} />
-
         </div>
     );
   }

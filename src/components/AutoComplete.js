@@ -8,8 +8,11 @@ import React from 'react';
 import {Link} from 'react-router';
 import AutoComplete from 'material-ui/lib/auto-complete.js';
 import DatePicker from 'material-ui/lib/date-picker/date-picker';
+import lazyCache from 'react-lazy-cache';
+import Arithmetic from './Arithmetic.js';
 
 class Suggest extends React.Component {
+
     render() {
         return (
             <div>
@@ -38,6 +41,6 @@ class Suggest extends React.Component {
         );
     }
 }
-
+console.log(this);
 
 export default Suggest;

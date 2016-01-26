@@ -36,7 +36,7 @@ export default class Arithmetic extends Component {
     });
   }
 
-  componentWillReceiveProps(nextProps){
+  componentWillReceiveProps(nextProps){console.log(this.cache);
     this.cache.componentWillReceiveProps(nextProps);
 
   }
