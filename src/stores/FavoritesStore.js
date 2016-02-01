@@ -12,6 +12,7 @@ class FavoritesStore {
     });
   }
 
+
   addFavoriteLocation(location) {
     this.locations.push(location);
   }
