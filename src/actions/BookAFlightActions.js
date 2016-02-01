@@ -6,4 +6,4 @@
 
 import alt from '../AltApp';
 
-export default alt.generateActions('newLeg','getLeg', 'getAllLeg');
+export default alt.generateActions('newLeg','getLeg', 'getAllLeg', 'addPassenger' ,'requestFlight' ,'addFlight', 'addReturnFlight');

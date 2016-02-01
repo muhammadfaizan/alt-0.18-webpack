@@ -25,12 +25,12 @@ class BookAFLightFormStore {
         });
   }
 
-  addPassenger (val){
+  onAddPassenger (val){
     this.passengers.push(val);
   }
-  requestFlight(form){}
+  onRequestFlight(form){}
 
-  addFlight(){}
+  onAddFlight(){}
   addReturnFlight(){}
 }
 
