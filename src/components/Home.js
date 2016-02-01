@@ -32,7 +32,6 @@ class Home extends React.Component {
           <Link to="/auth">
             <RaisedButton secondary={true} label="Auth"/>
           </Link>
-
           <Link to="/date-time">
             <RaisedButton primary={true} label="Date Time"/>
           </Link>
