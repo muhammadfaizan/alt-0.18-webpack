@@ -2,6 +2,7 @@
  * Created by Muhammad Faizan on 02-Feb-16.
  */
 import React from 'react';
+import Slider from 'material-ui/lib/slider';
 
 class BookAFlightForm extends React.Component {
   render() {
@@ -26,15 +27,16 @@ class BookAFlightForm extends React.Component {
 		      </p>
 		      <p className=''>No of Passengers</p>
 		      <p>
-			      <input name='no-of-passengers' type='range' min=0 />
+
+				<Slider defaultValue={0.5}/>
 		      </p>
-		      <!-- Do not display this field set if passengers are 0-->
+
 
 		      <fieldset>
 			      <legend>Passengers</legend>
 		      <p></p>
 			      <p>
-				      <input name='no-of-passengers' type='text' placeholder="Select Date & Time"/>
+				      <input name='nopassengers' type='text' placeholder="Select Date & Time"/>
 			      </p>
 		      </fieldset>
 

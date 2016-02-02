@@ -4,8 +4,11 @@
 import React from 'react';
 import DatePicker from 'material-ui/lib/date-picker/date-picker';
 import TimePicker from 'material-ui/lib/time-picker';
+import Slider from 'material-ui/lib/slider';
 
 class DateTimePicker extends React.Component {
+   onChangeSlider(event, value){
+  console.log('changed',value);}
   render() {
     return (
       <div className="container">
@@ -18,6 +21,10 @@ class DateTimePicker extends React.Component {
 	      <TimePicker
 		      format="ampm"
 		      hintText="12hr Format" />
+		<Slider ref="slider"
+				name="slider"  step={1} min={1} max={10} value={2} onChange={this.onChangeSlider}/>
+
+
       </div>
 
     );

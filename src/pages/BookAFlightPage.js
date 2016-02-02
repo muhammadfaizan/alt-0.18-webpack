@@ -22,7 +22,7 @@ const BookAFlightPage = React.createClass({
 				    Form: BAFFormStore,
 				    Map: BAFMapStore
 			    }
-	      }
+	        }
 		    <div/>
 	    </AltContainer>
     );
