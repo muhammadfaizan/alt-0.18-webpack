@@ -22,7 +22,7 @@ class BookAFLightFormStore {
       addFlight: BookAFlightActions.ADD_FLIGHT,
       addReturnFlight: BookAFlightActions.ADD_RETURN_FLIGHT
 
-        });
+    });
   }
 
   onAddPassenger (val){
