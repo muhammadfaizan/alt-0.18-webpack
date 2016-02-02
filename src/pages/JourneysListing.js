@@ -2,11 +2,11 @@
  * Created by V_D on 1/11/2016.
  */
 
-var React = require('react');
-var AltContainer = require('alt-container');
-var JourneyActions = require('../actions/JourneyActions');
-var Journeys = require('../components/Journeys');
-var JourneyStore = require('../stores/JourneyStore');
+import React from 'react';
+import AltContainer from 'alt-container';
+import JourneyActions from '../actions/JourneyActions';
+import Journeys from '../components/Journeys';
+import JourneyStore from '../stores/JourneyStore';
 
 var JourneysListing = React.createClass({
 
