@@ -26,12 +26,17 @@ class BookAFlightForm extends React.Component {
 		      </p>
 		      <p className=''>No of Passengers</p>
 		      <p>
-			      <input name='no-of-passengers' type='text' placeholder="Select Date & Time" value={this.props.form.noOfPassengers}/>
+			      <input name='no-of-passengers' type='range' min=0 max=10 />
 		      </p>
+		      <!-- Do not display this field set if passengers are 0-->
+
+		      <fieldset>
+			      <legend>Passengers</legend>
 		      <p></p>
-		      <p>
-			      <input name='no-of-passengers' type='text' placeholder="Select Date & Time" value={this.props.form.noOfPassengers}/>
-		      </p>
+			      <p>
+				      <input name='no-of-passengers' type='text' placeholder="Select Date & Time"/>
+			      </p>
+		      </fieldset>
 
 	      </form>
 	    </div>
