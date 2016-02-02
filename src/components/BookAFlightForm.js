@@ -26,7 +26,7 @@ class BookAFlightForm extends React.Component {
 		      </p>
 		      <p className=''>No of Passengers</p>
 		      <p>
-			      <input name='no-of-passengers' type='range' min=0 max=10 />
+			      <input name='no-of-passengers' type='range' min=0 />
 		      </p>
 		      <!-- Do not display this field set if passengers are 0-->
 
