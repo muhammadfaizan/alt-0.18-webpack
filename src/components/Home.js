@@ -36,7 +36,7 @@ class Home extends React.Component {
             <RaisedButton primary={true} label="Date Time & Slider"/>
           </Link>
           <Link to="/baf">
-            <RaisedButton primary={true} label="Book A Flight Form"/>
+            <RaisedButton secondary={true} label="Book A Flight Form"/>
           </Link>
 
         </div>
