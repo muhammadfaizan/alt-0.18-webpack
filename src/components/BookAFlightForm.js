@@ -8,24 +8,24 @@ class BookAFlightForm extends React.Component {
   render() {
     return (
 	    <div className='form-container'>
-	      <form className=''>
-		      <p className=''>Departure Date</p>
-		      <p className=''>
-			      <input name="datetime" className='' type='text' placeholder="Select Date & Time" value={this.props.form.datetime}/>
+	      <form className='flight-form'>
+		      <p className='flight-form-label'>Departure Date</p>
+		      <p className='flight-form-input-container'>
+			      <input name="datetime" className='flight-form-input' type='text' placeholder="Select Date & Time" />
 		      </p>
-		      <p className=''>From</p>
+		      <p className='flight-form-label'>From</p>
 		      <p>
-			      <input name='from' className='' type='text' placeholder="Select Departure Airport" value={this.props.form.from}/>
+			      <input name='from' className='' type='text' placeholder="Select Departure Airport " />
 		      </p>
-		      <p className=''>Destination</p>
+		      <p className='flight-form-label'>Destination</p>
 		      <p>
-			      <input name='destination' className='' type='text' placeholder="Select Arrival Airport" value={this.props.form.destination}/>
+			      <input name='destination' className='' type='text' placeholder="Select Arrival Airport"/>
 		      </p>
-		      <p className=''>Aircraft</p>
+		      <p className='flight-form-label'>Aircraft</p>
 		      <p className=''>
-			      <input name='aircraft' className='' type='text' placeholder="Select Date & Time" value={this.props.form.aircraft}/>
+			      <input name='aircraft' className='' type='text' placeholder="Select" />
 		      </p>
-		      <p className=''>No of Passengers</p>
+		      <p className='flight-form-label'>No of Passengers</p>
 		      <p>
 
 				<Slider defaultValue={0.5}/>
@@ -34,8 +34,8 @@ class BookAFlightForm extends React.Component {
 
 		      <fieldset>
 			      <legend>Passengers</legend>
-		      <p></p>
-			      <p>
+		      <p className='flight-form-label'></p>
+			      <p className='flight-form-input-container'>
 				      <input name='nopassengers' type='text' placeholder="Select Date & Time"/>
 			      </p>
 		      </fieldset>
