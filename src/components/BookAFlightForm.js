@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import Slider from 'material-ui/lib/slider';
+import AirportInput from './Shared/AirportInput'
 
 class BookAFlightForm extends React.Component {
   render() {
@@ -13,16 +14,11 @@ class BookAFlightForm extends React.Component {
 		      <p className='flight-form-input-container'>
 			      <input name="datetime" className='flight-form-input' type='text' placeholder="Select Date & Time" />
 		      </p>
-		      <p className='flight-form-label'>From</p>
-		      <p>
-			      <input name='from' className='' type='text' placeholder="Select Departure Airport " />
-		      </p>
-		      <p className='flight-form-label'>Destination</p>
-		      <p>
-			      <input name='destination' className='' type='text' placeholder="Select Arrival Airport"/>
-		      </p>
+		      <AirportInput name={'from'} label={'From'} placeholder={"Select Departure Airport "} value={null} />
+		      <AirportInput name={'destination'} label={'Destination'} placeholder={"Select Arrival Airport "} value={null} />
+		      
 		      <p className='flight-form-label'>Aircraft</p>
-		      <p className=''>
+		      <p className='flight-form-input-container'>
 			      <input name='aircraft' className='' type='text' placeholder="Select" />
 		      </p>
 		      <p className='flight-form-label'>No of Passengers</p>
