@@ -5,6 +5,7 @@ import React from 'react';
 import Slider from 'material-ui/lib/slider';
 import DatePicker from 'material-ui/lib/date-picker/date-picker';
 import TimePicker from 'material-ui/lib/time-picker';
+import AirportInput from './Shared/AirportInput';
 import Dialog from 'material-ui/lib/dialog';
 import FlatButton from 'material-ui/lib/flat-button';
 import RaisedButton from 'material-ui/lib/raised-button';
@@ -46,16 +47,11 @@ class BookAFlightForm extends React.Component {
 					format="ampm"
 					hintText="12hr Format" />
 		      </p>
-		      <p className='flight-form-label'>From</p>
-		      <p>
-			      <input name='from' className='' type='text' placeholder="Select Departure Airport " />
-		      </p>
-		      <p className='flight-form-label'>Destination</p>
-		      <p>
-			      <input name='destination' className='' type='text' placeholder="Select Arrival Airport"/>
-		      </p>
+		      <AirportInput name={'from'} label={'From'} placeholder={"Select Departure Airport "} value={null} />
+		      <AirportInput name={'destination'} label={'Destination'} placeholder={"Select Arrival Airport "} value={null} />
+		      
 		      <p className='flight-form-label'>Aircraft</p>
-		      <p className=''>
+		      <p className='flight-form-input-container'>
 			      <input name='aircraft' className='' type='text' placeholder="Select" />
 				<RaisedButton label="Select Aircraft" onTouchTap={this.handleOpen} />
 				<Dialog
@@ -81,6 +77,7 @@ class BookAFlightForm extends React.Component {
 			      <p className='flight-form-input-container'>
 				      <input name='nopassengers' type='text' placeholder="Select Date & Time"/>
 			      </p>
+
 		      </fieldset>
 
 	      </form>
