@@ -5,9 +5,32 @@ import React from 'react';
 import Slider from 'material-ui/lib/slider';
 import DatePicker from 'material-ui/lib/date-picker/date-picker';
 import TimePicker from 'material-ui/lib/time-picker';
+import Dialog from 'material-ui/lib/dialog';
+import FlatButton from 'material-ui/lib/flat-button';
+import RaisedButton from 'material-ui/lib/raised-button';
 
 class BookAFlightForm extends React.Component {
+  state = {
+	open: false
+  };
+  handleOpen = () => {
+	this.setState({open: true});
+  };
+
+  handleClose = () => {
+	this.setState({open: false});
+  };
   render() {
+	const actions = [
+	  <FlatButton
+		  label="Cancel"
+		  secondary={true}
+		  onTouchTap={this.handleClose} />,
+	  <FlatButton
+		  label="Submit"
+		  primary={true}
+		  onTouchTap={this.handleClose} />,
+	];
     return (
 	    <div className='form-container'>
 	      <form className='flight-form'>
@@ -34,6 +57,16 @@ class BookAFlightForm extends React.Component {
 		      <p className='flight-form-label'>Aircraft</p>
 		      <p className=''>
 			      <input name='aircraft' className='' type='text' placeholder="Select" />
+				<RaisedButton label="Select Aircraft" onTouchTap={this.handleOpen} />
+				<Dialog
+					title="Select Aircraft"
+					actions={actions}
+					modal={true}
+
+					open={this.state.open}
+					>
+				  This dialog spans the entire width of the screen.
+				</Dialog>
 		      </p>
 		      <p className='flight-form-label'>No of Passengers</p>
 		      <p>
