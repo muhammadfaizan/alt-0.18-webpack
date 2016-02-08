@@ -12,7 +12,7 @@ class MarkerStore {
         //locations = MarkerSource.fetchMarkers();
         this.markers = [];
         this.center =[40.714, -74.006];
-        this.zoom= 2;
+        this.zoom= 4;
         //greatPlaceCoords: [],
         //this.registerAsync(MarkerSource);
         this.bindActions(MarkerAction);

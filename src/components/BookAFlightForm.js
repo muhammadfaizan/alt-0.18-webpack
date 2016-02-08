@@ -10,6 +10,11 @@ import Dialog from 'material-ui/lib/dialog';
 import FlatButton from 'material-ui/lib/flat-button';
 import RaisedButton from 'material-ui/lib/raised-button';
 
+import Map from './MapContainer';
+import AltContainer from 'alt-container';
+import MarkerStore from '../stores/MarkerStore';
+import MarkerAction from '../actions/MarkerAction';
+
 class BookAFlightForm extends React.Component {
   state = {
 	open: false
@@ -67,7 +72,7 @@ class BookAFlightForm extends React.Component {
 		      </p>
 		      <p className='flight-form-label'>No of Passengers</p>
 		      <p>
-				<Slider ref="slider"
+				<Slider ref="slider" width="70%"
 						name="slider" step={1} min={1} max={10} value={2} onChange={this.onChangeSlider}/>
 		      </p>
 		      <fieldset>
@@ -77,6 +82,11 @@ class BookAFlightForm extends React.Component {
 				      <input name='nopassengers' type='text' placeholder="Select Date & Time"/>
 			      </p>
 		      </fieldset>
+			  <p className='flight-form-label'>
+
+				  <Map/>
+
+				</p>
 
 	      </form>
 	    </div>
