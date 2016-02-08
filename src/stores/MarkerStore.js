@@ -11,7 +11,7 @@ class MarkerStore {
         constructor() {
         //locations = MarkerSource.fetchMarkers();
         this.markers = [];
-        this.center =[40.714, -74.006];
+        this.center =[31.377852,7.226563];
         this.zoom= 4;
         //greatPlaceCoords: [],
         //this.registerAsync(MarkerSource);

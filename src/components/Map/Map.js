@@ -53,10 +53,10 @@ export default class SimpleMapPage extends React.Component {
           YesIWantToUseGoogleMapApiInternals={true}
 					onGoogleApiLoaded={({map, maps}) => {
 
+/*Commented*/
+             /*   map.controls[google.maps.ControlPosition.TOP_CENTER].push(
+                    document.getElementById('info'));
 
-                /*map.controls[google.maps.ControlPosition.TOP_CENTER].push(
-                    document.getElementById('info'));*/
-/*
                 marker1 = new google.maps.Marker({
                   map: map,
                   draggable: false,
@@ -69,11 +69,11 @@ export default class SimpleMapPage extends React.Component {
                   position: {lat: 48.857, lng: 2.352}
                 });
 
-                /!*var bounds = new google.maps.LatLngBounds(
+                var bounds = new google.maps.LatLngBounds(
                     marker1.getPosition(), marker2.getPosition());
-                map.fitBounds(bounds);*!/
-                /!*google.maps.event.addListener(marker1, 'position_changed', update);
-                google.maps.event.addListener(marker2, 'position_changed', update);*!/
+                map.fitBounds(bounds);
+                google.maps.event.addListener(marker1, 'position_changed', update);
+                google.maps.event.addListener(marker2, 'position_changed', update);
 
 
                 console.log(poly);
@@ -86,17 +86,17 @@ export default class SimpleMapPage extends React.Component {
                 });
                 console.log(geodesicPoly);
 
-                update();*/
+                update();
 
 
 
 
-              /*var marker2 = new google.maps.Marker({
+              var marker2 = new google.maps.Marker({
                 map: map,
                 draggable: false,
                 position: {lat: 48.857, lng: 2.352}
-              });*/
-/*
+              });
+
               var self = this;
               var marks = [];
               let geocoder = new maps.Geocoder();
@@ -117,7 +117,9 @@ export default class SimpleMapPage extends React.Component {
                       alert("Geocode was not successful for the following reason: " + status);
                     }
                   });
+
 */
+/*Commented end*/
             }}
 
 					bootstrapURLKeys={
