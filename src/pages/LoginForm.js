@@ -6,6 +6,7 @@ var React = require('react');
 var AltContainer = require('alt-container');
 var UserActions = require('../actions/UserActions');
 var Login = require('../components/Login');
+var NoLink = require('../components/TwoWay');
 var UserStore = require('../stores/UserStore');
 
 var LoginForm = React.createClass({
@@ -21,6 +22,8 @@ var LoginForm = React.createClass({
           <AltContainer store={UserStore}>
             <Login onLogin = {this.loginClick}/>
           </AltContainer>
+
+          <NoLink />
 
         </div>
     );
