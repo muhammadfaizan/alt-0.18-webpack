@@ -21,7 +21,10 @@ class BookAFlightForm extends React.Component {
   handleClose = () => {
 	this.setState({open: false});
   };
+  onChangeSlider(event, value){
+	alert(value);}
   render() {
+
 	const actions = [
 	  <FlatButton
 		  label="Cancel"
@@ -58,26 +61,21 @@ class BookAFlightForm extends React.Component {
 					title="Select Aircraft"
 					actions={actions}
 					modal={true}
-
-					open={this.state.open}
-					>
+					open={this.state.open}>
 				  This dialog spans the entire width of the screen.
 				</Dialog>
 		      </p>
 		      <p className='flight-form-label'>No of Passengers</p>
 		      <p>
-
-				<Slider defaultValue={0.5}/>
+				<Slider ref="slider"
+						name="slider" step={1} min={1} max={10} value={2} onChange={this.onChangeSlider}/>
 		      </p>
-
-
 		      <fieldset>
 			      <legend>Passengers</legend>
 		      <p className='flight-form-label'></p>
 			      <p className='flight-form-input-container'>
 				      <input name='nopassengers' type='text' placeholder="Select Date & Time"/>
 			      </p>
-
 		      </fieldset>
 
 	      </form>
