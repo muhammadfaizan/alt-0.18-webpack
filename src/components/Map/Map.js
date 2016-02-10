@@ -149,7 +149,7 @@ export default class SimpleMapPage extends React.Component {
               this.props.markers.map((marker, index) => {this.markers = this.props.markers;
                 return (
 
-                    <MyGreatPlace key={index} lat={marker.lat} lng={marker.lng} text={'A'} />
+                    <MyGreatPlace key={index} lat={marker.lat} lng={marker.lng} text={marker.name} />
                 )
 
               })
